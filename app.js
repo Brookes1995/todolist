@@ -4,6 +4,7 @@ const day = require(__dirname + '/date.js');
 const mongoose = require('mongoose');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(__dirname + '/public'));
@@ -109,6 +110,6 @@ app.post('/update', function(req,res) {
 })
 
 
-app.listen(3000, function () {
-    console.log("listening on port 3000");
+app.listen(port, function () {
+    console.log("listening on port ${port}");
 });
